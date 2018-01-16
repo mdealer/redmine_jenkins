@@ -24,20 +24,8 @@ class JenkinsClient
   def test_connection
     test = {}
     test[:errors] = []
-
-    begin
-      test[:jobs_count] = connection.job.list_all.size
-    rescue => e
-      test[:jobs_count] = 0
-      test[:errors] << e.message
-    end
-
-    begin
-      test[:version] = connection.get_jenkins_version
-    rescue => e
-      test[:version] = 0
-      test[:errors] << e.message
-    end
+    test[:jobs_count] = connection.job.list_all.size
+    test[:version] = connection.get_jenkins_version
 
     return test
   end

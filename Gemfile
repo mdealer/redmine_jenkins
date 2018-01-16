@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'jenkins_api_client', '~> 1.3.0'
+# Also required: https://github.com/jbox-web/redmine_bootstrap_kit
+
+gem 'jenkins_api_client'
 
 # HAML views
 gem 'haml-rails'
